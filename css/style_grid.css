@@ -1,0 +1,222 @@
+/* --- style_grid.css --- */
+
+/* БАЗОВІ НАЛАШТУВАННЯ (Збережено з твого файлу) */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  line-height: 1.5;
+  width: 100%;
+}
+
+/* GRID LAYOUT ДЛЯ ВСІЄЇ СТОРІНКИ */
+body {
+  display: grid;
+  /* Три рядки: 
+     1. Хедер (авто висота)
+     2. Центр (1fr - займає все вільне місце)
+     3. Футер (авто висота) */
+  grid-template-rows: auto 1fr auto;
+}
+
+/* ЗАГАЛЬНІ СТИЛІ ТЕКСТУ */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span,
+a,
+li {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  max-width: 100%;
+}
+
+/* --- HEADER --- */
+.header-area {
+  background-color: #cde4f7;
+  display: grid;
+  /* Ліва колонка 200px (але не менше 120px), права - решта місця */
+  grid-template-columns: minmax(120px, 200px) 1fr;
+  gap: 20px; /* Відступ між блоками */
+  border-bottom: 2px solid #000;
+  padding: 10px;
+  align-items: stretch;
+}
+
+.block-x {
+  background-color: #fff;
+  border: 1px solid #000;
+  padding: 10px;
+  display: grid;
+  place-items: center; /* Центрування тексту по горизонталі й вертикалі */
+  text-align: center;
+}
+
+.block-1 {
+  display: flex; /* Всередині блоків можна лишати flex для зручності */
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 20px;
+}
+
+/* --- MIDDLE SECTION --- */
+.middle-wrapper {
+  display: grid;
+  /* Три колонки: 20% - решта (авто) - 20% */
+  grid-template-columns: 20% 1fr 20%;
+  width: 100%;
+  /* Grid автоматично робить колонки однакової висоти */
+}
+
+.block-2 {
+  background-color: #ffe4cd;
+  border-right: 1px solid #000;
+  padding: 10px;
+}
+
+/* ЦЕНТРАЛЬНА КОЛОНКА (Теж Грід) */
+.center-column {
+  display: grid;
+  /* Верх і низ по вмісту, центр розтягується */
+  grid-template-rows: auto 1fr auto;
+}
+
+.block-3 {
+  background-color: #eaf3dd;
+  border-bottom: 1px solid #000;
+  padding: 15px;
+  text-align: center;
+}
+
+.block-4 {
+  background-color: #ffffff;
+  padding: 20px;
+  border-bottom: 1px solid #000;
+}
+
+.block-6 {
+  background-color: #eaf3dd;
+  padding: 15px;
+  text-align: center;
+}
+
+.block-5 {
+  background-color: #ffe4cd;
+  border-left: 1px solid #000;
+  padding: 10px;
+}
+
+/* --- FOOTER --- */
+.footer-area {
+  background-color: #cde4f7;
+  display: grid;
+  /* Ліва колонка - решта, права - 200px */
+  grid-template-columns: 1fr minmax(120px, 200px);
+  gap: 20px;
+  border-top: 2px solid #000;
+  padding: 10px;
+  align-items: stretch;
+}
+
+.block-7 {
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+}
+
+.block-y {
+  background-color: #fff;
+  border: 1px solid #000;
+  padding: 10px;
+  text-align: center;
+  display: grid;
+  place-items: center;
+}
+
+/* --- ІНШІ СТИЛІ (Меню, Зображення, Типографіка) --- */
+ul.menu {
+  list-style-type: none;
+}
+.menu-item {
+  margin-bottom: 10px;
+}
+.link {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  display: block;
+}
+.link:hover {
+  text-decoration: underline;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+.title-main {
+  display: none;
+}
+
+/* Стилі заголовків (скопійовані) */
+.h1-text {
+  font-size: 2em;
+  font-weight: bold;
+  margin-bottom: 0.67em;
+  line-height: 1.2;
+  color: #111;
+}
+.h2-text {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 0.75em;
+  color: #222;
+}
+.h3-text {
+  font-size: 1.17em;
+  font-weight: bold;
+  margin-bottom: 0.8em;
+  color: #333;
+}
+.h4-text {
+  font-size: 1em;
+  font-weight: bold;
+  margin-bottom: 1em;
+  color: #444;
+}
+.h5-text {
+  font-size: 0.83em;
+  font-weight: bold;
+  margin-bottom: 1.2em;
+  color: #555;
+}
+.h6-text {
+  font-size: 0.67em;
+  font-weight: bold;
+  margin-bottom: 1.5em;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.useful-link {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+.logo-image {
+  max-width: 100%;
+  width: 80px;
+  height: auto;
+  margin-top: 5px;
+}
